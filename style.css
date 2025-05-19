@@ -1,47 +1,94 @@
 body {
-    background-color: #fdf4dc;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  .foto {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  h1 {
-    font-size: 2.8em;
-    color: #008000;
-    margin: 10px 0;
-  }
-  
-  .assinatura {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #555;
-  }
-  
-  .destaque {
-    color: #e91e63;
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  
-  .confetes {
-    font-size: 1.5em;
-    margin: 10px 0;
-  }
-  
+  background-color: #fdf4dc;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.foto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 2.8em;
+  color: #008000;
+  margin: 10px 0;
+}
+
+.assinatura {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #555;
+}
+
+.destaque {
+  color: #e91e63;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.confetes {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/* Rodapé */
+.validade {
+  margin-top: 30px;
+}
+
+.aviso {
+  color: red;
+  font-size: 10px;
+  margin: 4px 0;
+}
+
+.data {
+  font-size: 8px;
+  color: #888;
+  margin: 0;
+}
+
+/* Animação de confetes */
+@keyframes cair {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+.confete-animado {
+  position: absolute;
+  font-size: 1.5em;
+  animation: cair linear infinite;
+  z-index: 0;
+}
+
+/* Gerar vários confetes */
+body::before {
+  content: "🎉🎊🎉🎊🎉🎊🎉🎊🎉🎊";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  white-space: pre;
+  font-size: 1.5em;
+  animation: cair 5s linear infinite;
+  opacity: 0.3;
+}
