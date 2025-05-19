@@ -14,14 +14,34 @@ body {
     padding: 20px;
   }
   
+  .foto {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
   h1 {
-    font-size: 3em;
+    font-size: 2.8em;
     color: #008000;
+    margin: 10px 0;
   }
   
   .assinatura {
     margin-top: 20px;
     font-size: 1.5em;
     color: #555;
+  }
+  
+  .destaque {
+    color: #e91e63;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .confetes {
+    font-size: 1.5em;
+    margin: 10px 0;
   }
   
